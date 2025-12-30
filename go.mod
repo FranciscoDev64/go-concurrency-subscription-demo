@@ -5,6 +5,7 @@ go 1.25.1
 require (
 	github.com/alexedwards/scs/redisstore v0.0.0-20251002162104-209de6e426de
 	github.com/alexedwards/scs/v2 v2.9.0
+	github.com/bwmarrin/go-alone v0.0.0-20190806015146-742bb55d1631
 	github.com/go-chi/chi/v5 v5.2.3
 	github.com/gomodule/redigo v1.8.0
 	github.com/jackc/pgconn v1.14.3
