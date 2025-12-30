@@ -42,6 +42,7 @@ Each feature was implemented on its own branch with incremental commits, reflect
 
 ## 📁 Project Structure
 
+```text
 .
 ├── cmd/                         # Main application entry points
 ├── internal/                    # Core business logic

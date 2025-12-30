@@ -54,7 +54,6 @@ func (app *Config) render(w http.ResponseWriter, r *http.Request, t string, td *
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
 }
 
 func (app *Config) AddDefaultData(td *TemplateData, r *http.Request) *TemplateData {
@@ -72,5 +71,4 @@ func (app *Config) AddDefaultData(td *TemplateData, r *http.Request) *TemplateDa
 
 func (app *Config) IsAuthenticated(r *http.Request) bool {
 	return app.Session.Exists(r.Context(), "userID")
-
 }

@@ -21,7 +21,7 @@ services:
       - "6379:6379"
     restart: always
     volumes:
-      - ./db-data/redis/:/data
+      - redis_data:/data
 
   #  start mailhog, using jcalonso/mailhog for my Mac's M1 chip, DO NOT CHANGE
   mailhog:
@@ -33,3 +33,4 @@ services:
 
 volumes:
   postgres_data:
+  redis_data:
