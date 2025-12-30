@@ -39,18 +39,25 @@ func (app *Config) PostLoginPage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if !validPassword {
+		msg := Message{
+			To:      email,
+			Subject: "Failed log in attempt",
+			Data:    "Invalid login attempt!",
+		}
+
+		app.sendEmail(msg)
 		app.Session.Put(r.Context(), "error", "Invalid credentials.")
 		http.Redirect(w, r, "/login", http.StatusSeeOther)
 		return
 	}
 
-	// okay to log user in
+	// okay, so log user in
 	app.Session.Put(r.Context(), "userID", user.ID)
 	app.Session.Put(r.Context(), "user", user)
 
 	app.Session.Put(r.Context(), "flash", "Successful login!")
 
-	// redirect user
+	// redirect the user
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
 
@@ -71,13 +78,13 @@ func (app *Config) PostRegisterPage(w http.ResponseWriter, r *http.Request) {
 
 	// send an activation email
 
-	// subscribe the user to an account
+	// subscbribe the user to an account
 }
 
 func (app *Config) ActivateAccount(w http.ResponseWriter, r *http.Request) {
-	// validate the URL
+	// validate url
 
-	// generate the invoice
+	// generate an invoice
 
 	// send an email with attachments
 
